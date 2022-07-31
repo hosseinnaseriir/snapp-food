@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import LoadScrollableVendors from "./LoadScrollableVendors";
 import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 

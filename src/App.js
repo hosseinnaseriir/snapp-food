@@ -1,5 +1,5 @@
 import React from "react";
-import { Home } from "screens";
+import { Home, NotFoundPage } from "screens";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "components";
 
@@ -8,6 +8,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   );

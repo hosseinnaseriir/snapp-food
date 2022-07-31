@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getVendorsList } from "api/services/index";
 
 export const fetchVendorsListAction = createAsyncThunk(
-  "users/fetchByIdStatus",
+  "vendorsList/fetchByQuery",
   async (query) => {
     const response = await getVendorsList(query);
     return response.data.data.finalResult;
@@ -27,7 +27,7 @@ export const vendorsListSlice = createSlice({
         ...state,
         rejected: {
           status: true,
-          message: action.payload,
+          message: action.error.message,
         },
         pending: false,
       };
