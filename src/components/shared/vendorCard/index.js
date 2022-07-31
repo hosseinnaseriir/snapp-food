@@ -2,7 +2,7 @@ import React from "react";
 import { svgs } from "./../../../assets/svgs/index";
 import "./styles.scss";
 
-function Index() {
+function Index({ title }) {
   return (
     <figure className="vendor-card">
       <img
@@ -18,7 +18,7 @@ function Index() {
         </div>
         <div className="vendor-title">
           <div className="vendor-name">
-            <h4>پیتزا شیلا (پارک ملت)</h4>
+            <h4>{title}</h4>
             <span className="badge">تا 20%</span>
             {svgs.satars}
           </div>
