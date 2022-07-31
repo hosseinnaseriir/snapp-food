@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { VendorCard } from "components";
 import { useDispatch } from "react-redux";
+
+import { VendorCard } from "components";
 import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 
 const LoadScrollableVendors = ({ vendorsList }) => {

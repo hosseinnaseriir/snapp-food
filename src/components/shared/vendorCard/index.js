@@ -23,8 +23,8 @@ function Index({
         <div className="vendor-title">
           <div className="vendor-name">
             <h4>{title}</h4>
-            <span className="badge">تا 20%</span>
-            {svgs.satars}
+            {/* <span className="badge">تا 20%</span>
+            {svgs.satars} */}
           </div>
           <div className="vendor-rate">
             <span>({voteCount})</span>
@@ -37,7 +37,7 @@ function Index({
         <div className="delivery-options">
           <span className="delivery-type">
             {" "}
-            {!isZFExpress ? " پیک فروشنده" : "ارسال اکسپرس"}
+            {!isZFExpress ? "پیک فروشنده" : "ارسال اکسپرس"}
           </span>
           <span>{deliveryFee} تومان</span>
         </div>
