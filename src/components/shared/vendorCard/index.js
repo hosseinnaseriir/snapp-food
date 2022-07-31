@@ -2,19 +2,23 @@ import React from "react";
 import { svgs } from "./../../../assets/svgs/index";
 import "./styles.scss";
 
-function Index({ title }) {
+function Index({
+  title,
+  backgroundImage,
+  defLogo,
+  rate,
+  voteCount,
+  description,
+  deliver,
+  deliveryFee,
+  isZFExpress
+}) {
   return (
     <figure className="vendor-card">
-      <img
-        src="https://cdn.snappfood.ir/400x266/uploads/images/vendors/covers/5e01b8a4bcf22.jpg"
-        alt=""
-      />
+      <img src={backgroundImage} alt="" />
       <figcaption>
         <div className="vendor-logo">
-          <img
-            src="https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/5e425b1b4cf0b.jpg"
-            alt=""
-          />
+          <img src={defLogo} alt="" />
         </div>
         <div className="vendor-title">
           <div className="vendor-name">
@@ -23,16 +27,19 @@ function Index({ title }) {
             {svgs.satars}
           </div>
           <div className="vendor-rate">
-            <span>(424254)</span>
-            <span className="rate-number badge">4.4 {svgs.star} </span>
+            <span>({voteCount})</span>
+            <span className="rate-number badge">
+              {rate} {svgs.star}{" "}
+            </span>
           </div>
         </div>
-        <ul className="vendor-tags">
-          <li>فست فود</li>
-        </ul>
+        <p className="vendor-tags">{description}</p>
         <div className="delivery-options">
-          <span className="delivery-type">پیک فروشنده</span>
-          <span>9600 تومان</span>
+          <span className="delivery-type">
+            {" "}
+            {!isZFExpress ? " پیک فروشنده" : "ارسال اکسپرس"}
+          </span>
+          <span>{deliveryFee} تومان</span>
         </div>
       </figcaption>
     </figure>
