@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { svgs } from "assets/svgs/index";
 import "./styles.scss";
 
@@ -9,7 +10,6 @@ function Index({
   rate,
   voteCount,
   description,
-  deliver,
   deliveryFee,
   isZFExpress,
 }) {
@@ -45,5 +45,16 @@ function Index({
     </figure>
   );
 }
+
+Index.propTypes = {
+  title: PropTypes.string,
+  backgroundImage: PropTypes.string,
+  defLogo: PropTypes.string,
+  rate: PropTypes.number,
+  voteCount: PropTypes.number,
+  description: PropTypes.string,
+  deliveryFee: PropTypes.number,
+  isZFExpress: PropTypes.bool,
+};
 
 export default Index;

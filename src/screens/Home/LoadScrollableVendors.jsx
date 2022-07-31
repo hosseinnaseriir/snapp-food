@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { VendorCard } from "components";
 import { getVendorsList } from "api/services/index";
@@ -43,6 +44,11 @@ const LoadScrollableVendors = ({ setVendorsList, vendorsList }) => {
       </div>
     </InfiniteScroll>
   );
+};
+
+LoadScrollableVendors.propTypes = {
+  setVendorsList: PropTypes.func,
+  vendorsList: PropTypes.array,
 };
 
 export default LoadScrollableVendors;
