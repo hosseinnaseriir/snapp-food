@@ -1,5 +1,5 @@
-import React, { useEffect, useCallback, useState } from "react";
-import { getVendorsList } from "./../../api/services/index";
+import React, { useEffect, useState } from "react";
+import { getVendorsList } from "api/services/index";
 import LoadScrollableVendors from "./LoadScrollableVendors";
 
 function Index() {

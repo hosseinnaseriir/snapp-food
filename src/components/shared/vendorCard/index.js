@@ -1,5 +1,5 @@
 import React from "react";
-import { svgs } from "./../../../assets/svgs/index";
+import { svgs } from "assets/svgs/index";
 import "./styles.scss";
 
 function Index({
@@ -11,7 +11,7 @@ function Index({
   description,
   deliver,
   deliveryFee,
-  isZFExpress
+  isZFExpress,
 }) {
   return (
     <figure className="vendor-card">

@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { VendorCard } from "./../../components";
-import { getVendorsList } from "./../../api/services/index";
+import { VendorCard } from "components";
+import { getVendorsList } from "api/services/index";
 
 const LoadScrollableVendors = ({ setVendorsList, vendorsList }) => {
   const [lastPosition, setLastPosition] = useState(0);
