@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { getVendorsList } from "api/services/index";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import LoadScrollableVendors from "./LoadScrollableVendors";
+import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 
 function Index() {
-  const [vendorsList, setVendorsList] = useState();
+  const dispatch = useDispatch();
+  const { vendorsList } = useSelector((store) => store.vendorsListSlice);
+
   useEffect(() => {
-    getVendorsList({
-      page: 0,
-      page_size: 10,
-      lat: 35.754,
-      long: 51.328,
-    }).then((res) => {
-      console.log(res);
-      setVendorsList(res.data.data.finalResult);
-    });
+    dispatch(
+      fetchVendorsListAction({
+        page: 0,
+        page_size: 10,
+        lat: 35.754,
+        long: 51.328,
+      })
+    );
   }, []);
 
   return (
-    vendorsList && (
-      <LoadScrollableVendors
-        vendorsList={vendorsList}
-        setVendorsList={setVendorsList}
-      />
+    vendorsList.length > 0 && (
+      <LoadScrollableVendors vendorsList={vendorsList} />
     )
   );
 }
