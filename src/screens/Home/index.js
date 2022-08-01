@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import { Loader } from "components";
 import LoadScrollableVendors from "./LoadScrollableVendors";
 import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 
@@ -20,9 +21,13 @@ function Index() {
   }, []);
 
   return (
-    vendorsList.length > 0 && (
-      <LoadScrollableVendors vendorsList={vendorsList} />
-    )
+    <>
+      {vendorsList.length > 0 ? (
+        <LoadScrollableVendors vendorsList={vendorsList} />
+      ) : (
+        <Loader />
+      )}
+    </>
   );
 }
 
