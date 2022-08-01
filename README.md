@@ -1,3 +1,5 @@
+# Next and TypeScript version of this app available in [this link](https://github.com/hosseinnaseriir/snapp-food-next-ts)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
