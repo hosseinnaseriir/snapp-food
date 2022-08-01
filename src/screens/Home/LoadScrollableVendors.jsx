@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useDispatch } from "react-redux";
 
-import { VendorCard } from "components";
+import { LoadMore, VendorCard } from "components";
 import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 
 const LoadScrollableVendors = ({ vendorsList }) => {
@@ -29,7 +29,7 @@ const LoadScrollableVendors = ({ vendorsList }) => {
       dataLength={vendorsList.length}
       next={loadProducts}
       hasMore={true}
-      loader={<h4>Loading...</h4>}
+      loader={<LoadMore />}
     >
       <div className="flex flex-col">
         {vendorsList.map(

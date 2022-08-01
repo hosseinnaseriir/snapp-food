@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { Loader } from "components";
 import { fetchVendorsListAction } from "redux/slices/vendorsListSlice";
 import LoadScrollableVendors from "./LoadScrollableVendors";
+import { toast } from "react-toastify";
 
 function Index() {
   const dispatch = useDispatch();
-  const { vendorsList } = useSelector((store) => store.vendorsListSlice);
+  const { vendorsList, rejected } = useSelector(
+    (store) => store.vendorsListSlice
+  );
 
   useEffect(() => {
     dispatch(
@@ -19,6 +22,9 @@ function Index() {
       })
     );
   }, []);
+  useEffect(() => {
+    if (rejected.status) toast.error(rejected.message);
+  }, [rejected]);
 
   return (
     <>

@@ -1,10 +1,10 @@
 .vendor-card {
-  min-width: 30rem;
+  min-width: 28rem;
   border-radius: var(--radius-sm);
   height: 25rem;
   box-shadow: var(--box-shadow-a);
-  margin: 2.4rem 0;
   overflow: hidden;
+  margin: 2.4rem 1.6rem;
   position: relative;
   cursor: pointer;
   .best-coupon {
@@ -78,6 +78,7 @@
       font-size: var(--text-sm);
       text-overflow: ellipsis;
       overflow: hidden;
+      white-space: nowrap;
     }
     .delivery-options {
       font-size: var(--text-sm);
