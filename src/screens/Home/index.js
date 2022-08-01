@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Loader } from "components";
 import LoadScrollableVendors from "./LoadScrollableVendors";
 import useFetchVendorsList from "./useFetchVendorsList";

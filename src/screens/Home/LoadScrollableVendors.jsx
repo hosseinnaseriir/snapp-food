@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useDispatch } from "react-redux";
-
 import { LoadMore, VendorCard } from "components";
 import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import { fetchVendorsListAction } from "redux/slices/vendorsListSlice";
 import { toast } from "react-toastify";
 
