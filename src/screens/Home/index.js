@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Loader } from "components";
+import { fetchVendorsListAction } from "redux/slices/vendorsListSlice";
 import LoadScrollableVendors from "./LoadScrollableVendors";
-import { fetchVendorsListAction } from "./../../redux/slices/vendorsListSlice";
 
 function Index() {
   const dispatch = useDispatch();

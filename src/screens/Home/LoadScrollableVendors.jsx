@@ -46,6 +46,8 @@ const LoadScrollableVendors = ({ vendorsList }) => {
                 description={data.description}
                 isZFExpress={data.isZFExpress}
                 deliveryFee={data.deliveryFee}
+                bestCoupon={data.best_coupon}
+                deliveryTime={data.deliveryTime}
               />
             )
         )}

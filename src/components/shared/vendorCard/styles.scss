@@ -1,11 +1,22 @@
 .vendor-card {
-  width: 37.5rem;
+  min-width: 30rem;
   border-radius: var(--radius-sm);
   height: 25rem;
   box-shadow: var(--box-shadow-a);
   margin: 2.4rem 0;
   overflow: hidden;
+  position: relative;
   cursor: pointer;
+  .best-coupon {
+    position: absolute;
+    background-color: var(--white);
+    color: var(--secondary-color);
+    font-size: var(--text-sm);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    top: 1rem;
+    font-weight: 700;
+  }
   img {
     height: 50%;
     width: 100%;
@@ -63,12 +74,23 @@
         color: var(--grey);
       }
     }
-    .vendor-tags,
+    .vendor-tags {
+      font-size: var(--text-sm);
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
     .delivery-options {
       font-size: var(--text-sm);
+      display: flex;
+      justify-content: space-between;
       .delivery-type {
         color: var(--grey);
         margin-left: 0.8rem;
+      }
+      .delivery-time {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
       }
     }
   }

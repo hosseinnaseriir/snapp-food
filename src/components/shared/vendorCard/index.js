@@ -12,10 +12,13 @@ function Index({
   description,
   deliveryFee,
   isZFExpress,
+  bestCoupon,
+  deliveryTime,
 }) {
   return (
     <figure className="vendor-card">
       <img src={backgroundImage} alt="" />
+      {bestCoupon && <p className="best-coupon">{bestCoupon}</p>}
       <figcaption>
         <div className="vendor-logo">
           <img src={defLogo} alt="" />
@@ -35,11 +38,19 @@ function Index({
         </div>
         <p className="vendor-tags">{description}</p>
         <div className="delivery-options">
-          <span className="delivery-type">
-            {" "}
-            {!isZFExpress ? "پیک فروشنده" : "ارسال اکسپرس"}
-          </span>
-          <span>{deliveryFee} تومان</span>
+          <div>
+            <span className="delivery-type">
+              {" "}
+              {!isZFExpress ? "پیک فروشنده" : "ارسال اکسپرس"}
+            </span>
+            <span>{deliveryFee} تومان</span>
+          </div>
+          {deliveryTime > 0 && (
+            <div className="delivery-time">
+              <span>تا {deliveryTime} دقیقه</span>
+              {svgs.time}{" "}
+            </div>
+          )}
         </div>
       </figcaption>
     </figure>
@@ -55,6 +66,8 @@ Index.propTypes = {
   description: PropTypes.string,
   deliveryFee: PropTypes.number,
   isZFExpress: PropTypes.bool,
+  bestCoupon: PropTypes.string,
+  deliveryTime: PropTypes.number,
 };
 
 export default Index;
